@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Chinese Agent Cost Estimator</title>
+    <script src="js/product.js"></script>
+    <script src="js/haul.js"></script>
+    <script src="js/service.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
+    <link rel="stylesheet" href="css/hella.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <h1>🐉 Agent Fees</h1>
+    <div class="row">
+        <div class="column six">
+            <label for="service_charge_percent_input">Service Charge %</label>
+            <input type="text" id="service_charge_percent_input" value="6%">
+        </div>
+
+        <div class="column six">
+            <label for="rmb_to_usd_conversion_rate_input">RMB to USD conversion rate</label>
+            <input type="text" id="rmb_to_usd_conversion_rate_input" value="6.20">
+        </div>
+    </div>
+
+    <h1>💵 Paypal Fees</h1>
+    <div class="row">
+        <div class="column six">
+            <label for="paypal_your_currency_select">Your currency</label>
+            <select name="Currency" id="paypal_your_currency_select">
+                <option value="USD">USD</option>
+                <option value="CAD">CAD</option>
+                <option value="RMB">RMB</option>
+            </select>
+        </div>
+
+        <div class="column six">
+            <label for="paypal_currency_conversion_rate_input">Your Currency to USD conversion rate</label>
+            <input type="text" id="paypal_currency_conversion_rate_input" value="0.7547">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="column six">
+            <label for="paypal_service_percent_charge_input">Paypal's percentage charge</label>
+            <input type="text" id="paypal_service_percent_charge_input" value="3%">
+        </div>
+
+        <div class="column six">
+            <label for="paypal_service_flat_charge_input">Paypal's flat service charge (USD)</label>
+            <input type="text" id="paypal_service_flat_charge_input" value="0.30">
+        </div>
+    </div>
+
+
+    <h1>🚚 Shipping</h1>
+    <div class="row">
+        <div class="column six">
+            <label for="shipping_first_weight_input">First shipping weight (grams)</label>
+            <input type="text" id="shipping_first_weight_input" value="1000">
+        </div>
+
+        <div class="column six">
+            <label for="shipping_first_price_input">Price for first weight (RMB)</label>
+            <input type="text" id="shipping_first_price_input" value="99.20">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="column">
+            <label for="shipping_use_second_weight_checkbox">Use a second weight scale when the package passes
+                1000g?</label>
+            <input type="checkbox" name="Use second weight?" id="shipping_use_second_weight_checkbox" checked>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="column six">
+            <label for="shipping_second_weight_input">Second shipping weight (grams)</label>
+            <input type="text" id="shipping_second_weight_input" value="1000">
+        </div>
+
+        <div class="column six">
+            <label for="shipping_second_price_input">Price for second weight (RMB)</label>
+            <input type="text" id="shipping_second_price_input" value="50.70">
+        </div>
+    </div>
+
+    <h1>📦 Products</h1>
+    <div class="product_box">
+        <div class="row">
+            <div class="column">
+                <label for="product_name_input">Product name</label>
+                <input type="text" id="product_name_input" value="Product 1">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="column six">
+                <label for="product_price_input">Product price (RMB)</label>
+                <input type="text" id="product_price_input" value="100">
+            </div>
+            <div class="column six">
+                <label for="product_weight_input">Product weight (grams)</label>
+                <input type="text" id="product_weight_input" value="100">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="column six">
+                <label for="product_domestic_shipping_input">Domestic shipping (RMB)</label>
+                <input type="text" id="product_domestic_shipping_input" value="10">
+            </div>
+
+            <div class="column three">
+                <label for="product_qc_photos_checkbox">Agent Photos</label>
+                <input type="checkbox" name="QC Photos" id="product_qc_photos_checkbox" checked>
+            </div>
+            <div class="column three">
+                <label for="product_measure_size_checkbox">Agent Measurements</label>
+                <input type="checkbox" name="QC Photos" id="product_measure_size_checkbox" checked>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="column three offset-six">
+                <button class="button" onclick="addProduct()">Cancel</button>
+            </div>
+            <div class="column three">
+                <button class="button" onclick="addProduct()">Add Product</button>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>
