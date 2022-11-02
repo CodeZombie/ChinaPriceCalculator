@@ -1,3 +1,4 @@
+
 h1{
     border-bottom: 2px solid #111;
     padding-bottom: 1rem;
@@ -20,7 +21,7 @@ h1{
     font-weight: 400;
 }
 
-.product_box {
+.product {
     box-shadow: #ccc 2px 2px 4px 1px;
     margin-bottom: 1rem;
     padding: 1rem;

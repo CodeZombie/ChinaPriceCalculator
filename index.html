@@ -6,15 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Chinese Agent Cost Estimator</title>
-    <script src="https://unpkg.com/vue@3"></script>
+    <script src="https://unpkg.com/vue@3.2.41"></script>
     
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
+    <link rel="stylesheet" href="https://unpkg.com/mvp.css@1.12/mvp.css">
+    <!--<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">-->
     <link rel="stylesheet" href="css/hella.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-    <div id="app">
+    <div id="app" class="grid">
         <h1>🐉 Agent Fees</h1>
         <div class="row">
             <div class="column six">
@@ -87,7 +88,7 @@
         </div>
 
         <h1>📦 Products</h1>
-        <div class="product_box" v-for="product in haul.products">
+        <div class="product" v-for="product in haul.products">
             <div class="row">
                 <div class="column">
                     <label for="product_name_input">Product name</label>
@@ -117,13 +118,15 @@
                     <input type="text" id="optional_service_fees_input" v-model.number="product.services_cost">
                 </div>
             </div>
+            <div class="row">
+                <div class="column three offset-nine">
+                    <button v-on:click="deleteProduct(product)">Delete</button>
+                </div>
+            </div>
         </div>
         <div class="row">
-            <div class="column three offset-six">
-                <button class="button" onclick="addProduct()">Cancel</button>
-            </div>
-            <div class="column three">
-                <button class="button" onclick="addProduct()">Add Product</button>
+            <div class="column six">
+                <button class="button" v-on:click="addNewProduct">Add Product</button>
             </div>
         </div>
         <div id="total_box">
@@ -138,6 +141,7 @@
         </div>
     </div>
 </body>
+<script src="js/money.js"></script>
 <script src="js/product.js"></script>
 <script src="js/haul.js"></script>
 <script src="js/agent.js"></script>
