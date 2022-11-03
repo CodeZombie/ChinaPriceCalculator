@@ -1,9 +1,9 @@
 function Agent() {
-    this.agentServiceFeePercentage = 0.06;
-    this.usdRMBExchangeRate = 6.400;
+    this.agentServiceFeePercentage = 6;
+    this.usdRMBExchangeRate = 7.000;
 
     this.localCurrency = "CAD";
-    this.localCurrencyToUSDExchangeRate = 0.73591;     //The rate at which the base currency is converted to the paypal currency.
+    this.localCurrencyToUSDExchangeRate = 0.780457;     //The rate at which the base currency is converted to the paypal currency.
     //this.paypalFeePercentage = 0.03;                //The amount paypal takes as a percentage of the total cost, after conversion.
     this.paypalFlatCharge = 0.03;                   //A charge, in USD that paypal charges as a flat fee.
 
@@ -51,7 +51,7 @@ Agent.prototype.totalCostWithoutAgentServiceCharge = function(haul) {
 
 //output: RMB
 Agent.prototype.agentServiceCharge = function(haul) {
-    return (this.totalCostWithoutAgentServiceCharge(haul)) * this.agentServiceFeePercentage;
+    return (this.totalCostWithoutAgentServiceCharge(haul)) * (this.agentServiceFeePercentage / 100.0);
 }
 
 //Ouput: Local Currency

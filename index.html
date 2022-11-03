@@ -41,7 +41,7 @@
             </div>
 
             <div class="column six">
-                <label for="paypal_currency_conversion_rate_input">Processor's {{ agent.localCurrency }} to USD Conversion Rate</label>
+                <label for="paypal_currency_conversion_rate_input">{{ agent.localCurrency }} to USD Conversion Rate</label>
                 <input type="text" id="paypal_currency_conversion_rate_input" v-model.number="agent.localCurrencyToUSDExchangeRate">
             </div>
         </div>
